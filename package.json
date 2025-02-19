@@ -1,13 +1,24 @@
 {
   "name": "semantic-release-note-contributor",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "type": "module",
+  "main": "index.js",
+  "exports": "./index.js",
+  "files": [
+    "lib",
+    "index.js"
+  ],
   "keywords": [],
   "author": "Johannes Groß",
   "license": "MIT",
   "description": "",
   "dependencies": {
+    "@octokit/core": "^6.1.4",
     "@octokit/rest": "^21.1.0",
-    "semantic-release": "^24.2.2"
+    "http-proxy-agent": "^7.0.2",
+    "https-proxy-agent": "^7.0.6",
+    "lodash-es": "^4.17.21",
+    "semantic-release": "^24.2.2",
+    "url-join": "^5.0.0"
   }
 }
