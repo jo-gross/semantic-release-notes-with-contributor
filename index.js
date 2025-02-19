@@ -27,7 +27,7 @@ export async function analyzeCommits(pluginConfig, context, { Octokit = Semantic
   );
 
   // Get Author of each commit
-  /** `repository` response object looks like this:
+  /** `contributors` response object looks like this:
     commita349fc8: {
       oid: 'a349fc8fde64fa88ad8d82b8ccbb9c235cec8049',
       author: { user: login: "username" }
@@ -37,13 +37,13 @@ export async function analyzeCommits(pluginConfig, context, { Octokit = Semantic
       author: { user: login: "username" }
     }
    */
-  const { repository } = await octokit.graphql(buildGetGHReleaseCommitsAuthorsQuery(
+  const { repository: contributors } = await octokit.graphql(buildGetGHReleaseCommitsAuthorsQuery(
     commits.map((commit) => commit.commit)), 
     { owner, repo }
   );
 
   // NEXT - DO SOMETHING WITH THE AUTHOR INFO
-  console.log(repository);
+  console.log(contributors);
 }
 
 /**
